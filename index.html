@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dienstplan FjordCare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 95%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 5px; /* Kleinere Polsterung für mehr Zellen pro Seite */
+            text-align: left;
+            vertical-align: top; /* Text am oberen Rand der Zelle */
+            font-size: 0.8em; /* Kleinere Schriftgröße */
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            white-space: nowrap; /* Verhindert Zeilenumbruch in Kopfzeilen */
+        }
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .header-info div {
+            flex: 1;
+        }
+        .header-info .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .header-info .plan-title {
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .header-info .plan-date {
+            text-align: right;
+            font-weight: bold;
+        }
+        .employee-info {
+            font-weight: bold;
+        }
+        .employee-details {
+            font-size: 0.7em;
+            margin-top: 3px;
+        }
+        textarea {
+            width: 100%;
+            height: 20px; /* Kleinere Höhe für Eingabefelder */
+            border: none;
+            box-sizing: border-box; /* Padding und Border werden in die Gesamtbreite/Höhe einbezogen */
+            resize: none; /* Deaktiviert das Ändern der Größe durch den Benutzer */
+            font-size: 0.8em;
+            overflow: hidden; /* Verhindert Scrollbars */
+            padding: 0;
+            margin: 0;
+            background-color: transparent; /* Macht den Hintergrund transparent */
+        }
+        .total-hours {
+            text-align: right;
+            font-weight: bold;
+        }
+        .remarks-section {
+            margin-top: 20px;
+        }
+        .remarks-section textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            font-size: 0.9em;
+            resize: vertical; /* Erlaubt vertikales Resizing */
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-info">
+            <div class="logo">
+                FjordCare Care & Mensch
+                <br>
+                Sodrichstr. 27
+                <br>
+                24867 Dannewerk
+            </div>
+            <div class="plan-title">FjordCare Care 24867 Dannewerk Betreuung und Hauswirtschaft</div>
+            <div class="plan-date">Sollplan<br>01.07.2025 - 31.07.2025</div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2"></th>
+                    <th colspan="7">Woche 1</th>
+                    <th colspan="7">Woche 2</th>
+                    <th colspan="7">Woche 3</th>
+                    <th colspan="7">Woche 4</th>
+                    <th colspan="3">Woche 5</th>
+                    <th rowspan="2">Sollst.</th>
+                    <th rowspan="2">Ist</th>
+                    <th rowspan="2">+/-</th>
+                </tr>
+                <tr>
+                    <th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th><th>Mo</th>
+                    <th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th><th>Mo</th>
+                    <th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th><th>Mo</th>
+                    <th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th><th>Mo</th>
+                    <th>Di</th><th>Mi</th><th>Do</th>
+                </tr>
+                <tr>
+                    <th style="text-align: left;">Datum</th>
+                    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+                    <th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th>
+                    <th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th>
+                    <th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th>
+                    <th>29</th><th>30</th><th>31</th>
+                    <th></th><th></th><th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="employee-info">Arne Domachofski</div>
+                        <div class="employee-details">Verbl. Urlaub: 5 | Gesamt: 303.580</div>
+                        <div class="employee-details">HWK | Stelle: 100 %</div>
+                    </td>
+                    <td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td>
+                    <td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td><td><textarea>F</textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours">135.000</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Susanne Wilke</div>
+                        <div class="employee-details">Verbl. Urlaub: 28 | Gesamt: 0</div>
+                        <div class="employee-details">HWK | Stelle: 77 %</div>
+                    </td>
+                    <td><textarea>E</textarea></td><td><textarea>E</textarea></td><td><textarea>E</textarea></td><td><textarea></textarea></td><td><textarea>E</textarea></td><td><textarea>E</textarea></td><td><textarea>E</textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea>O</textarea></td>
+                    <td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours">31.20</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Andrea Tessin</div>
+                        <div class="employee-details">Verbl. Urlaub: 19 | Gesamt: 0</div>
+                        <div class="employee-details">HWK | Stelle: 25 %</div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours">48.000</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">-48.000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Axel Schumann</div>
+                        <div class="employee-details">Verbl. Urlaub: 3 | Gesamt: 0</div>
+                        <div class="employee-details">HWK | Stelle: 0 %</div>
+                    </td>
+                    <td><textarea>W</textarea></td><td><textarea>U</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea>U</textarea></td><td><textarea>U</textarea></td><td><textarea>A</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea>U</textarea></td><td><textarea>U</textarea></td><td><textarea>A</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Sarah Knop</div>
+                        <div class="employee-details">Verbl. Urlaub: 13 | Gesamt: 0</div>
+                        <div class="employee-details">HWK | Stelle: 25 %</div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours">48.000</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">-48.000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Sonja Franzen</div>
+                        <div class="employee-details">Verbl. Urlaub: -13 | Gesamt: 8674.650</div>
+                        <div class="employee-details">HWK | Stelle: 25 %</div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea>W</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea>W</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea>W</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea></textarea></td>
+                    <td><textarea>W</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea>W</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea>W</textarea></td><td><textarea>M</textarea></td><td><textarea>M</textarea></td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                    <td class="total-hours">0</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="employee-info">Neuer Mitarbeiter 1</div>
+                        <div class="employee-details">Verbl. Urlaub: | Gesamt: </div>
+                        <div class="employee-details">Stelle: </div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Neuer Mitarbeiter 2</div>
+                        <div class="employee-details">Verbl. Urlaub: | Gesamt: </div>
+                        <div class="employee-details">Stelle: </div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="employee-info">Neuer Mitarbeiter 3</div>
+                        <div class="employee-details">Verbl. Urlaub: | Gesamt: </div>
+                        <div class="employee-details">Stelle: </div>
+                    </td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td><textarea></textarea></td><td><textarea></textarea></td><td><textarea></textarea></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                    <td class="total-hours"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="remarks-section">
+            <p>Bemerkungen:</p>
+            <textarea placeholder="Hier können Bemerkungen eingetragen werden..."></textarea>
+            <p style="text-align: center; margin-top: 10px;">Zusatzinformationen:</p>
+            <textarea placeholder="Hier können Zusatzinformationen eingetragen werden..." style="height: 40px;"></textarea>
+        </div>
+    </div>
+</body>
+</html>
